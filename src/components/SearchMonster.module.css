@@ -1,0 +1,27 @@
+.monsterType {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.crSlider {
+  /* margin-top: 0.5em; */
+}
+
+.summaryForm {
+  background-color: #e0efdf;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+}
+.buttonWrapper button {
+  font-size: 1.2em;
+  background-color: #003319;
+  color: #e0efdf;
+  margin-top: 1em;
+}

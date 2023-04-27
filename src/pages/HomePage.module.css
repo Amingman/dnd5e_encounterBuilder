@@ -1,0 +1,23 @@
+.HomePageWrapper {
+  /* padding-top: 3em; */
+  margin-top: 3em;
+}
+
+.bgImg {
+  width: 50vw;
+  aspect-ratio: 1/1;
+  background-image: url("../assets/kisspng-dungeons-dragons-d20-system-dice-role-playing-ga-dice-game-5ae15774b98168.2668860115247174287598.png");
+  background-size: cover;
+  position: absolute;
+  opacity: 0.2;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 50%;
+  transform: translateX(-50%);
+  /* top: 10px; */
+  top: 5em;
+}
+
+h1 {
+  /* opacity: 1; */
+}
