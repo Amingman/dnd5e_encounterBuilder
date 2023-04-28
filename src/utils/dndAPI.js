@@ -112,5 +112,6 @@ export async function searchSRDMonster(queries) {
   monsters.sort((a, b) => {
     return a.challenge_rating - b.challenge_rating
   })
+  console.log(monsters)
   return monsters
 }

@@ -1,0 +1,31 @@
+.cardWrapper {
+  display: grid;
+  align-content: space-between;
+}
+
+.actionButtonWrapper {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  /* margin: auto !important;
+  margin: 0 !important;
+  width: 80% !important;
+  padding: 0 !important; */
+}
+.actionButton {
+  display: grid;
+  background-color: #003319;
+  color: #e0efdf;
+  background-color: #003319 !important;
+  color: #e0efdf !important;
+  /* margin: auto;
+  margin-top: 1em;
+  padding: 0;
+  width: 100%; */
+}
+
+.pagination {
+  margin: auto;
+  display: grid;
+  justify-content: center;
+}

@@ -11,8 +11,12 @@ import { useRef, useState } from "react"
 import css from "./SearchMonster.module.css"
 import { searchSRDMonster } from "../utils/dndAPI"
 import Summary from "./SearchSummary"
+import { getArrayAtRange } from "../utils/generalFunctions"
 
-export default function SearchMonster({ setSearchedMonsters }) {
+export default function SearchMonster({
+  setSearchedMonsters,
+  setDisplayedMonster,
+}) {
   const monsterTypesDict = {
     All: true,
     Abberation: true,
@@ -32,7 +36,8 @@ export default function SearchMonster({ setSearchedMonsters }) {
   }
 
   const [selectedMonsters, setSelectedMonsters] = useState(monsterTypesDict)
-  const [crValues, setCRValues] = useState([0, 33])
+  //   const [crValues, setCRValues] = useState([0, 33])
+  const [crValues, setCRValues] = useState([0, 1])
   const [sizeValues, setSizeValues] = useState([0, 5])
   const [nameSearch, setNameSearch] = useState("")
   const [keywordSearch, setKeywordSearch] = useState("")
@@ -129,7 +134,9 @@ export default function SearchMonster({ setSearchedMonsters }) {
       keyword: keywordSearch.trim(),
       types: typesCalc,
     }
-    setSearchedMonsters(await searchSRDMonster(queries))
+    const data = await searchSRDMonster(queries)
+    setSearchedMonsters(data)
+    setDisplayedMonster(getArrayAtRange(data, 15, 1))
   }
 
   return (
@@ -202,14 +209,14 @@ export default function SearchMonster({ setSearchedMonsters }) {
           onChange={handleKeywordSearch}
         />
       </section>
-      <Summary
+      {/* <Summary
         nameSearch={nameSearch}
         keywordSearch={keywordSearch}
         crValues={crValues}
         sizeValues={sizeValues}
         selectedMonsters={selectedMonsters}
         // display={`none`}
-      />
+      /> */}
 
       <div className={css.buttonWrapper}>
         <Button color="secondary">Reset</Button>
