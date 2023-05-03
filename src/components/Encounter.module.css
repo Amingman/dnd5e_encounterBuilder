@@ -1,0 +1,30 @@
+.encounterWrapper {
+  display: flex;
+  gap: 1em;
+}
+
+.groupWrapper {
+  border: 1px solid #003319;
+  /* width: 100%; */
+  border-radius: 5px;
+  width: fit-content;
+  padding: 10px;
+  margin-top: 0;
+  /* flex-grow: 1; */
+  min-height: 100px;
+}
+
+.groupWrapper h3 {
+  margin-top: 10px;
+}
+
+.monster {
+  border: 1px solid #4ead89;
+  border-radius: 5px;
+
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-grow: 1;
+}

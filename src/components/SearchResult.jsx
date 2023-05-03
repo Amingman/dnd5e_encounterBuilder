@@ -23,11 +23,13 @@ export default function SearchResult({
   displayedMonster,
   setPage,
   page,
+  handleAdd,
 }) {
   function handlePaginationChange(event, value) {
     setPage(value)
     setDisplayedMonster(getArrayAtRange(searchedMonsters, 15, value))
   }
+
   return (
     <section>
       <h2>Search Result ({searchedMonsters.length})</h2>
@@ -144,6 +146,7 @@ export default function SearchResult({
                   size="small"
                   className={css.actionButton}
                   fullWidth
+                  onClick={() => handleAdd(monster)}
                 >
                   Add
                 </Button>
