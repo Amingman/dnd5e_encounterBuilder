@@ -1,10 +1,14 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import "./App.css"
 import HomePage from "./pages/HomePage"
+import { Routes, Route } from "react-router-dom"
 import NavBar from "./components/NavBar"
 import { createTheme, ThemeProvider } from "@mui/material"
 import { purple } from "@mui/material/colors"
-import MainPage from "./pages/MainPage"
+import SearchPage from "./pages/SearchPage"
+import LoginPage from "./pages/LoginPage"
+import { UserContext } from "./UserContext"
+import EncounterDay from "./components/EncounterDay"
 
 const theme = createTheme({
   palette: {
@@ -30,6 +34,7 @@ const theme = createTheme({
 })
 
 function App() {
+  const { isLoggedIn, setIsLoggedIn } = useContext(UserContext)
   const palletes = {
     main: `#4EAD89`,
     mainBold: `#003319`,
@@ -40,8 +45,17 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <NavBar />
+        {/* <LoginPage /> */}
         {/* <HomePage /> */}
-        <MainPage />
+        {/* <MainPage /> */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/mycampaign" element={<LoginPage />} />
+          <Route path="/myencounters" element={<LoginPage />} />
+          <Route path="/browsemonsters" element={<SearchPage />} />
+        </Routes>
+        <EncounterDay />
       </ThemeProvider>
     </>
   )
